@@ -1,0 +1,5 @@
+---
+greeting:  hello world test1
+file: templates/place_holder.j2
+user: root
+group: root

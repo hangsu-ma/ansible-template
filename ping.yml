@@ -1,0 +1,6 @@
+---
+- name: NOOP playbook pinging jenkins pipeline and target host
+  hosts: "{{ target_host | default('sandbox') }}"
+  tasks:
+  - name: ping
+    ping:

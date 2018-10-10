@@ -1,0 +1,10 @@
+---
+- name: demo playbook for custom module/plugin
+  hosts: "{{ target_host | default('sandbox') }}"
+  tasks:
+  - name: hello world
+    hello-world:
+      greeting: "{{ greeting }}"
+      file: "{{ file}}"
+      user: "{{ user }}"
+      group: "{{ group }}"

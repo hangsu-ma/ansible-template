@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.vagrant
+*.retry
+/docker/id_rsa
+/vagrant/*.crt
+/vagrant/*.pem
