@@ -56,7 +56,9 @@ Vagrant.configure(2) do |config|
 
   docker_repo = ENV["docker_repo"]?ENV["docker_repo"]:settings['proxy']['docker_repo_url']
   if settings['proxy']['enable'] && docker_repo && docker_repo != 'CORP_INTERNAL_DOCKEAR_REPO:PORT'
-    docker login #{docker_repo} -u #{username} -p #{password}
+    config.vm.provision "docker-login", type: "shell", inline: <<-SHELL
+      docker login #{docker_repo} -u #{$username} -p #{$password}
+    SHELL
   end
 
   config.vm.provision "docker-base", type: "shell", inline: <<-SHELL
