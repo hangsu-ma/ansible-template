@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-alias build='docker build . -t ansible-sandbox --build-arg ANSIBLE_RELEASE=${ANSIBLE_VERSION}'
+alias build='docker build . -t ansible-sandbox'
 alias br='build && run'
 run () {
     PLAYBOOKS=$(_mountAllFiles "" "")
